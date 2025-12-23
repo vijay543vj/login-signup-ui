@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Signup</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+
+<header class="head">
+    <h1>Login & Signup Page</h1>
+</header>
+
+<main>
+    <section class="container">
+
+        <h4 id="formTitle">Login</h4>
+
+        <!-- FORM WRAPPER FOR SLIDE -->
+        <div class="form-wrapper show-login">
+
+            <!-- LOGIN FORM -->
+            <form class="login" id="loginForm">
+                <label>Username</label>
+                <input type="text" class="Info-box" placeholder="Enter username" required>
+
+                <label>Password</label>
+                <div class="password-box">
+                    <input type="password" id="loginPassword" class="Info-box" placeholder="Enter password" required>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+
+                    <span class="toggle" data-target="loginPassword">👁</span>
+                </div>
+
+                <button type="submit" class="Sub-btn">Login</button>
+            </form>
+
+            <!-- SIGNUP FORM -->
+            <form class="signup" id="signupForm">
+                <label>Email</label>
+                <input type="email" class="Info-box" placeholder="Enter email" required>
+
+                <label>Password</label>
+                <div class="password-box">
+                    <input type="password" id="signupPassword" class="Info-box"
+                           placeholder="Create password" required>
+                    <span class="toggle" data-target="signupPassword">👁</span>
+                </div>
+
+                <!-- Strength -->
+                <div class="strength">
+                    <div id="strengthBar"></div>
+                </div>
+                <small id="strengthText"></small>
+
+                <!-- Confirm password -->
+                <label>Confirm Password</label>
+                <input type="password" id="confirmPassword" class="Info-box"
+                       placeholder="Confirm password" required>
+                <small id="matchMessage"></small>
+
+                <button type="submit" class="Sub-btn">
+                    <span class="btn-text">Signup</span>
+                    <span class="spinner hidden"></span>
+                </button>
+            </form>
+
+        </div>
+
+        <!-- TOGGLE -->
+        <div class="Signup">
+            <p>
+                <span id="toggleMessage">Not registered yet?</span>
+                <a href="#" id="toggleLink">Signup</a>
+            </p>
+        </div>
+
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

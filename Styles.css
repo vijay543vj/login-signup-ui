@@ -1,0 +1,255 @@
+/* ===== RESET ===== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== BODY ===== */
+body{
+    background: url(bg.jpg) center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 15px;
+}
+
+/* ===== HEADER ===== */
+.head{
+    position: absolute;
+    top: 20px;
+    text-align: center;
+}
+
+/* ===== CONTAINER ===== */
+.container{
+    width: 100%;
+    max-width: 450px;
+    background: rgba(13, 24, 40, 0.6);
+    backdrop-filter: blur(10px);              /* slightly smoother glass */
+    border-radius: 16px;                      /* subtle polish */
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    animation: fadeSlide 0.7s ease;            /* slightly snappier */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);  /* depth (portfolio polish) */
+}
+
+/* ===== TITLE ===== */
+.container h4{
+    color: aqua;
+    font-size: 1.8rem;
+    text-shadow: 0 0 8px cyan;                 /* softer glow */
+}
+
+/* ===== FORM WRAPPER ===== */
+.form-wrapper{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== FORMS ===== */
+.login,
+.signup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;                                 /* better breathing room */
+    transition: transform 0.45s ease, 
+                opacity 0.45s ease;
+}
+
+/* ===== SLIDE STATES ===== */
+.show-login .login{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.show-login .signup{
+    transform: translateX(100%);
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+}
+
+.show-signup .login{
+    transform: translateX(-100%);
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+}
+
+.show-signup .signup{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* ===== INPUT ===== */
+.Info-box{
+    width: 100%;
+    height: 40px;                              /* better tap size */
+    border: none;
+    border-radius: 8px;                       /* modern rounding */
+    background: rgba(253, 181, 206, 0.5);
+    padding: 8px 10px;
+    color: white;
+    transition: background 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.Info-box::placeholder{
+    color: white;
+    opacity: 0.6;
+}
+
+.Info-box:focus{
+    outline: none;
+    background: rgba(253, 181, 206, 0.65);
+    box-shadow: 0 0 10px rgba(253,181,206,0.9);
+}
+
+/* ===== PASSWORD BOX ===== */
+.password-box{
+    position: relative;
+}
+
+.toggle{
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.toggle:hover{
+    opacity: 1;
+}
+
+/* ===== PASSWORD STRENGTH ===== */
+.strength{
+    width: 100%;
+    height: 6px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#strengthBar{
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+#strengthText{
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+/* ===== CONFIRM PASSWORD MESSAGE ===== */
+#matchMessage{
+    font-size: 0.8rem;
+    margin-top: -2px;
+}
+
+/* ===== BUTTON ===== */
+.Sub-btn{
+    width: 70%;
+    height: 40px;
+    margin: 12px auto;
+    border-radius: 22px;
+    border: 1px solid #FDB5CE;
+    background: rgba(253, 181, 206, 0.8);
+    cursor: pointer;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.Sub-btn:hover{
+    background: rgba(253, 181, 206, 1);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(253,181,206,0.35);
+}
+
+.Sub-btn:active{
+    transform: scale(0.97);
+}
+
+/* ===== LOADING SPINNER ===== */
+.spinner{
+    width: 18px;
+    height: 18px;
+    border: 3px solid #fff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* ===== LINKS ===== */
+a{
+    color: rgb(248, 27, 230);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+a:hover{
+    color: #ffd1e2;
+}
+
+/* ===== SIGNUP BOX ===== */
+.Signup{
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    background: rgba(253, 181, 206, 0.3);
+    border-radius: 50px;
+    text-align: center;
+}
+
+/* ===== HIDDEN ===== */
+.hidden{
+    display: none;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeSlide{
+    from{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px){
+    .container h4{
+        font-size: 1.4rem;
+    }
+    .Sub-btn{
+        width: 90%;
+    }
+}
