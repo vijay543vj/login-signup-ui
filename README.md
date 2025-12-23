@@ -9,6 +9,18 @@ This project focuses on clean UI/UX, smooth animations, and real-world form inte
 👉 https://vijay543vj.github.io/login-signup-ui/
 
 ---
+## 📸 Screenshots
+
+### 📱 Mobile View
+![Mobile View](screenshots/mobile-view.png)
+
+### 💻 Desktop Signup View
+![Signup Page](screenshots/signup-page.png)
+
+### 💻 Desktop Login View
+![Login Page](screenshots/login-page.png)
+
+---
 
 ## ✨ Features
 
